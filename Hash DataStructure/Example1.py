@@ -5,7 +5,7 @@ class HashMap:
         self.map = [None]*self.size     # Initialize the hash map with None values
         
     def get_hash_index(self, key):
-        return hash(key) % self.size    # Hash function to determine the index
+        return hash(key) % self.size    # Hash function to determine the index #  hash() built-in function returns an integer value for every object which is hashable. 
     
     def add(self, key, value):
         index = self.get_hash_index(key)    # Get the hash of the key
@@ -21,7 +21,7 @@ class HashMap:
             
     def get(self, key):
         index = self.get_hash_index(key)    # Get the hash of the key
-        if self.map[index] is not None:     # If the slot is empty
+        if self.map[index] is not None:     # If the slot is not empty
             for pair in self.map[index]:    # Search for the key and return its value
                 if pair[0] == key:
                     return pair[1]
@@ -33,6 +33,7 @@ class HashMap:
             for pair in range(len(self.map[index])):       # Iterate through the slot
                 if self.map[index][pair][0] == key:        # If the key is found, delete the (key, value) pair
                     self.map[index].pop(pair)
+                    # self.map[index] = "Deleted"   Assigning string deleted instead of poping
                     return
     
 hash_map = HashMap()
@@ -40,6 +41,6 @@ hash_map.add('apple', 10)
 hash_map.add('orange', 20)
 hash_map.add('banana', 30)
 
-print(f"The value of the key 'orange' is: {hash_map.get('orange')}") # 20
+print(f"The value of the key 'orange' is: {hash_map.get('orange')}") # 20 
 hash_map.delete('banana')
 print(f"The value of the key 'banana' is: {hash_map.get('banana')}") # None
