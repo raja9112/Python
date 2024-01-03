@@ -6,7 +6,7 @@ def isSubset(arr1, arr2):
         hash_table[element] = True
         
     for i in arr2:
-        if i not in arr1:
+        if i not in hash_table:
             return False
     return True
 
