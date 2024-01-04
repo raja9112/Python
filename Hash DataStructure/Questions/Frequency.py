@@ -21,6 +21,17 @@ def frequency(arr):
     # Count the frequency of each element
     for num in arr:
         hash_table[num] += 1  # Value will be updated by adding 1 to existing value
+        # print(hash_table.items())
+# dict_items([(1, 1)])
+# dict_items([(1, 1), (2, 1)])
+# dict_items([(1, 1), (2, 1), (3, 1)])
+# dict_items([(1, 1), (2, 1), (3, 1), (4, 1)])
+# dict_items([(1, 1), (2, 2), (3, 1), (4, 1)])
+# dict_items([(1, 1), (2, 3), (3, 1), (4, 1)])
+# dict_items([(1, 1), (2, 3), (3, 2), (4, 1)])
+# dict_items([(1, 2), (2, 3), (3, 2), (4, 1)])
+# dict_items([(1, 3), (2, 3), (3, 2), (4, 1)])
+# dict_items([(1, 3), (2, 3), (3, 2), (4, 1), (5, 1)])
         
     maxx = max(hash_table.values()) # 3
     # print(hash_table.items()) #([(1, 3), (2, 3), (3, 2), (4, 1), (5, 1)])
