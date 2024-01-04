@@ -36,9 +36,9 @@ def frequency(arr):
     maxx = max(hash_table.values()) # 3
     # print(hash_table.items()) #([(1, 3), (2, 3), (3, 2), (4, 1), (5, 1)])
     
-    result = [num for num, count in hash_table.items() if count == maxx]
+    result = [(num,count) for num, count in hash_table.items() if count == maxx]
     print(result)
     
         
 nums = [1, 2, 3, 4, 2, 2, 3, 1, 1, 5]
-frequency(nums) # [1, 2]
+frequency(nums) # [(1, 3), (2, 3)]
