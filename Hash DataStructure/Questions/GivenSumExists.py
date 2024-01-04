@@ -2,12 +2,13 @@
 def Sum(arr, target):
     hash_table = {}
     for element in arr:
+        complement = target - element 
+        if complement in hash_table:
+            return True
         hash_table[element] = True
-        
-    complement = target - element 
-    if complement in hash_table:
-        return True
     return False
+        
+    
 
 usr = int(input("How many elements do you want add? "))
 arr=[]
