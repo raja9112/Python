@@ -12,20 +12,20 @@ def add_edge(v1, v2, cost):
         print(f"The given node {v2} is not present in graph")
     else:
         # For undirected and unweighted graph
-        # graph[v1].append(v2)
-        # graph[v2].append(v1)
+        graph[v1].append(v2)
+        graph[v2].append(v1)
         
         # For undirected and weighted graph
-        cost1 = [v2, cost]
-        cost2 = [v1, cost]
-        graph[v1].append(cost1)
-        graph[v2].append(cost2)     
+        # cost1 = [v2, cost]
+        # cost2 = [v1, cost]
+        # graph[v1].append(cost1)
+        # graph[v2].append(cost2)     
         
         # For directed and weighted graph
         # cost1 = [v2, cost]
         # graph[v1].append(cost1)       
         
-def DFS(node, visted, graph):
+"""def DFS(node, visted, graph):
     if node not in graph:
         print(f"{node} is not present in graph")
         return
@@ -34,15 +34,39 @@ def DFS(node, visted, graph):
         visited.add(node)
         for i in graph[node]:
             # DFS(i, visted, graph)   # For unweighted graph
-            DFS(i[0], visted, graph)    # For weighted graph, i[0] will check the node present in the nested loop.
+            DFS(i[0], visted, graph)    # For weighted graph, i[0] will check the node present in the nested loop."""
             
     # Output 
+    # DFS("B", visited, graph)
     # B
     # A
     # C
     # D
     # E
 
+
+# Iterative method
+def DFS(node,visited, graph):
+    if node not in graph:
+        print("The given node is not present in graph")
+        return
+    stack = []
+    stack.append(node)
+    while stack:
+        current = stack.pop()
+        if current not in visited:
+            print(current)
+            visited.add(current)
+            for i in graph[current]:
+                stack.append(i)
+                
+# Output
+# DFS("A", visited, graph)
+# A
+# D
+# E
+# B
+# C
 
 visited = set()
         
@@ -64,7 +88,7 @@ add_edge("C", "D", 3)
 add_edge("E", "D", 1)
 print(graph)
 
-DFS("B", visited, graph)
+DFS("A", visited, graph)
 
 
 # Complexity
