@@ -24,3 +24,4 @@ def BinarySearch(arr, element):
 arr = [2, 4, 6, 7, 8, 10, 12]
 element = 6
 print(BinarySearch(arr, element))
+# print(arr)  # [2, 4, 7, 8, 10, 12, 12]  without pop
