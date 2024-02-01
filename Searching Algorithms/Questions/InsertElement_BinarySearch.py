@@ -31,3 +31,4 @@ def BinarySearch(arr, element):
 arr = [2, 4, 6, 8, 10, 12]
 element = 7
 print(BinarySearch(arr, element))
+# print(arr)   # [2, 4, 6, 8, 8, 10, 12]   Before inserting the element
