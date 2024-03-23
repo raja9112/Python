@@ -29,6 +29,6 @@ def BinarySearch(arr, element):
     #  arr.insert(low, target)        # array.insert(index, element)
 
 arr = [2, 4, 6, 8, 10, 12]
-element = 7
+element = 8
 print(BinarySearch(arr, element))
 # print(arr)   # [2, 4, 6, 8, 8, 10, 12]   Before inserting the element
