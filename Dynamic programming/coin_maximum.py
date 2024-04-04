@@ -39,11 +39,13 @@ def coin(total: int, coins: list[int]) -> int:
     dp = [0] * (total + 1)
     dp[0] = 1
     
-    for coin in coins:
-        for i in range(1, total + 1):
+    for i in range(1, total + 1):
+        for coin in coins:
+        
             if i - coin >= 0:
                 dp[i] += dp[i-coin]
     
     return dp[total] if dp[total] != 0 else -1
     
-print(coin(5, [1, 4, 5])) # 3
+print(coin(5, [1, 4, 5])) # 4
+
